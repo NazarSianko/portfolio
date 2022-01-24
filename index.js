@@ -16,12 +16,13 @@ function burgerMenu(selector) {
       menu.toggleClass('burger-menu_active');
       
       if (menu.hasClass('burger-menu_active')) {
-        $('body').css('overlow', 'hidden');
+        $('body').css('overflow', 'hidden');
       } else {
-        $('body').css('overlow', 'visible');
+        $('body').css('overflow', 'visible');
       }
     }
   }
   
   burgerMenu('.burger-menu');
+  
   console.log('Вёрстка соответствует макету. Ширина экрана 768px +48/nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15/nНа ширине экрана 768рх и меньше реализовано адаптивное меню +22/n 85баллов');
