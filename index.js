@@ -24,5 +24,54 @@ function burgerMenu(selector) {
   }
   
   burgerMenu('.burger-menu');
+  /*const portfolioBtnOne = document.querySelector('.portfolio-btn-winter');
+  const portfolioBtnTwo = document.querySelector('.portfolio-btn-spring');
+  const portfolioBtnThree = document.querySelector('.portfolio-btn-summer');
+  const portfolioBtnFour = document.querySelector('.portfolio-btn-autumn');
+/*const portfolioImageOne = document.querySelector('.portfolio-image-one');
+const portfolioImageTwo = document.querySelector('.portfolio-image-two');
+const portfolioImageThree = document.querySelector('.portfolio-image-three');
+const portfolioImageFour = document.querySelector('.portfolio-image-four');
+const portfolioImageFive = document.querySelector('.portfolio-image-five');
+const portfolioImageSix = document.querySelector('.portfolio-image-six');*/
+/*const portfolioImages = document.querySelectorAll(".portfolio-image");
+
+portfolioBtnOne.addEventListener('click', () => {
+  portfolioImages.forEach((img,index) => img.src = `./assets/img/Winter/${index+1}.jpg`)
+});*/
+const portfolioBtn = document.querySelector('.button-list');
+const portfolioImages = document.querySelectorAll(".portfolio-image");
+const portfolioButton = document.querySelector('.portfolio-btn')
+
+function changeImage(event) {
+  if(event.target.classList.contains('portfolio-btn')) {
+      let data = event.target.dataset.season;
+      portfolioImages.forEach((img,index) => img.src = `./assets/img/${data}/${index+1}.jpg`);
+     
+    }
   
-  console.log('Вёрстка соответствует макету. Ширина экрана 768px +48/nНи на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15/nНа ширине экрана 768рх и меньше реализовано адаптивное меню +22/n 85баллов');
+}
+addEventListener('click',changeImage);
+function preloadSummerImages() {
+  for(let i = 1; i <= 6; i++) {
+    const img = new Image();
+    img.src = `./assets/img/Summer/${i}.jpg`;
+  }
+}
+preloadSummerImages();
+
+const activeBtn = document.querySelectorAll(".portfolio-btn");
+function changeClassActive(event) {
+  if(event.target.classList.contains('portfolio-btn')) {
+    activeBtn.forEach((item,index) => {
+      $(item).removeClass("active")
+      $(event.target).addClass("active");
+  })
+ 
+}
+}
+addEventListener('click',changeClassActive)
+
+
+
+
