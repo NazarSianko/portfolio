@@ -183,7 +183,7 @@ function changeTheme(event) {
     
     lig.forEach((item)=> item.classList.toggle('light-theme'));
     li.forEach((e)=> e.classList.toggle('titleLight'))
-    portBtn.forEach((elem)=> elem.style.backgroundColor="white");
+    portBtn.forEach((elem)=> elem.classList.toggle('btn-background'));
     dark.classList.toggle("active-light")
   }
 }
