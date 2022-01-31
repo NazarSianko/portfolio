@@ -186,7 +186,6 @@ function changeTheme(event) {
   }
 }
 addEventListener('click',changeTheme);
-let lang = 'en';
-let theme = ''
+
 
 
