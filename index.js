@@ -177,12 +177,14 @@ addEventListener('click',changeLangActive);
 const lig = document.querySelectorAll('.skill');
 const li = document.querySelectorAll('.title');
 const portBtn = document.querySelectorAll('.portfolio-btn')
+const dark = document.querySelector('.li')
 function changeTheme(event) {
   if (event.target.classList.contains('li')) {
     
     lig.forEach((item)=> item.classList.toggle('light-theme'));
     li.forEach((e)=> e.classList.toggle('titleLight'))
     portBtn.forEach((elem)=> elem.style.backgroundColor="white");
+    dark.classList.toggle("active-light")
   }
 }
 addEventListener('click',changeTheme);
