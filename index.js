@@ -81,35 +81,35 @@ const i18Obj = {
   }
 }
 function burgerMenu(selector) {
-    let menu = $(selector);
-    let button = menu.find('.burger-menu_button', '.burger-menu_lines');
-    let links = menu.find('.burger-menu_link');
-    let overlay = menu.find('.burger-menu_overlay');
-    
-    button.on('click', (e) => {
-      e.preventDefault();
-      toggleMenu();
-    });
-    
-    links.on('click', () => toggleMenu());
-    overlay.on('click', () => toggleMenu());
-    
-    function toggleMenu(){
-      menu.toggleClass('burger-menu_active');
-      
-      if (menu.hasClass('burger-menu_active')) {
-        $('body').css('overflow', 'hidden');
-      } else {
-        $('body').css('overflow', 'visible');
-      }
+  let menu = $(selector);
+  let button = menu.find('.burger-menu_button', '.burger-menu_lines');
+  let links = menu.find('.burger-menu_link');
+  let overlay = menu.find('.burger-menu_overlay');
+
+  button.on('click', (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+
+  links.on('click', () => toggleMenu());
+  overlay.on('click', () => toggleMenu());
+
+  function toggleMenu() {
+    menu.toggleClass('burger-menu_active');
+
+    if (menu.hasClass('burger-menu_active')) {
+      $('body').css('overflow', 'hidden');
+    } else {
+      $('body').css('overflow', 'visible');
     }
   }
-  
-  burgerMenu('.burger-menu');
-  /*const portfolioBtnOne = document.querySelector('.portfolio-btn-winter');
-  const portfolioBtnTwo = document.querySelector('.portfolio-btn-spring');
-  const portfolioBtnThree = document.querySelector('.portfolio-btn-summer');
-  const portfolioBtnFour = document.querySelector('.portfolio-btn-autumn');
+}
+
+burgerMenu('.burger-menu');
+/*const portfolioBtnOne = document.querySelector('.portfolio-btn-winter');
+const portfolioBtnTwo = document.querySelector('.portfolio-btn-spring');
+const portfolioBtnThree = document.querySelector('.portfolio-btn-summer');
+const portfolioBtnFour = document.querySelector('.portfolio-btn-autumn');
 /*const portfolioImageOne = document.querySelector('.portfolio-image-one');
 const portfolioImageTwo = document.querySelector('.portfolio-image-two');
 const portfolioImageThree = document.querySelector('.portfolio-image-three');
@@ -126,16 +126,16 @@ const portfolioImages = document.querySelectorAll(".portfolio-image");
 const portfolioButton = document.querySelector('.portfolio-btn')
 
 function changeImage(event) {
-  if(event.target.classList.contains('portfolio-btn')) {
-      let data = event.target.dataset.season;
-      portfolioImages.forEach((img,index) => img.src = `./assets/img/${data}/${index+1}.jpg`);
-     
-    }
-  
+  if (event.target.classList.contains('portfolio-btn')) {
+    let data = event.target.dataset.season;
+    portfolioImages.forEach((img, index) => img.src = `./assets/img/${data}/${index + 1}.jpg`);
+
+  }
+
 }
-addEventListener('click',changeImage);
+addEventListener('click', changeImage);
 function preloadSummerImages() {
-  for(let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 6; i++) {
     const img = new Image();
     img.src = `./assets/img/Summer/${i}.jpg`;
   }
@@ -144,35 +144,37 @@ preloadSummerImages();
 
 const activeBtn = document.querySelectorAll(".portfolio-btn");
 function changeClassActive(event) {
-  if(event.target.classList.contains('portfolio-btn')) {
-    activeBtn.forEach((item,index) => {
+  if (event.target.classList.contains('portfolio-btn')) {
+    activeBtn.forEach((item, index) => {
       $(item).removeClass("active")
       $(event.target).addClass("active");
-  })
- 
+    })
+
+  }
 }
-}
-addEventListener('click',changeClassActive);
+addEventListener('click', changeClassActive);
 
 const words = document.querySelectorAll("[data-i18]");
 const eng = document.querySelector('.en');
 const ru = document.querySelector('.ru');
 function getTranslate(lang) {
   words.forEach((i) => i.textContent = i18Obj[lang][i.dataset.i18]);
+  
 }
 eng.addEventListener('click', () => getTranslate('en'));
 ru.addEventListener('click', () => getTranslate('ru'));
+
 const activeLang = document.querySelectorAll(".language");
 function changeLangActive(event) {
-  if(event.target.classList.contains('language')) {
-    activeLang.forEach((item,index) => {
+  if (event.target.classList.contains('language')) {
+    activeLang.forEach((item, index) => {
       $(item).removeClass("act")
       $(event.target).addClass("act");
-  })
- 
+    })
+
+  }
 }
-}
-addEventListener('click',changeLangActive);
+addEventListener('click', changeLangActive);
 
 const lig = document.querySelectorAll('.skill');
 const li = document.querySelectorAll('.title');
@@ -180,14 +182,18 @@ const portBtn = document.querySelectorAll('.portfolio-btn')
 const dark = document.querySelector('.li')
 function changeTheme(event) {
   if (event.target.classList.contains('li')) {
-    
-    lig.forEach((item)=> item.classList.toggle('light-theme'));
-    li.forEach((e)=> e.classList.toggle('titleLight'))
-    portBtn.forEach((elem)=> elem.classList.toggle('btn-background'));
+    lig.forEach((item) => item.classList.toggle('light-theme'));
+    li.forEach((e) => e.classList.toggle('titleLight'))
+    portBtn.forEach((elem) => elem.classList.toggle('btn-background'));
     dark.classList.toggle("active-light")
   }
 }
-addEventListener('click',changeTheme);
+addEventListener('click', changeTheme);
 
-
-
+const title = document.querySelectorAll('.section-title');
+function clickRu(event) {
+  if (event.target.classList.contains('ru')) {
+    title.forEach((i) => i.style.width='260px')
+  }
+}
+addEventListener('click',clickRu)
